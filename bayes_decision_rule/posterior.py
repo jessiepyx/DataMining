@@ -16,6 +16,11 @@ def posterior(x):
     #TODO
 
     # begin answer
+
+    prior = np.sum(x, axis=1) / total
+    evidence = np.sum(x, axis=0) / total
+    p = l * prior.reshape(C, 1) / evidence.reshape(1, N)
+
     # end answer
     
     return p
