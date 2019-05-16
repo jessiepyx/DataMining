@@ -15,8 +15,7 @@ def likelihood(x):
 
     # begin answer
 
-    # add-one smoothing (note that x is already added by 1)
-    l = x / (np.transpose([np.sum(x, axis=1)]) + N)
+    l = x / np.transpose([np.sum(x, axis=1)])
 
     # end answer
 
