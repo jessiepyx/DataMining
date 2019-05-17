@@ -1,4 +1,5 @@
 # Data Mining Assignment 1
+## Files
 - hw_1_question.pdf: assignment questions
 - hw_1_solution.pdf: my solutions
 - bayes_decision_rule: code for question 2
