@@ -13,5 +13,9 @@ def linear_regression(X, y):
     w = np.zeros((P + 1, 1))
     # YOUR CODE HERE
     # begin answer
+
+    X_with_b = np.vstack((np.ones((1, X.shape[1])), X))
+    w = np.linalg.pinv(X_with_b.dot(X_with_b.T)).dot(X_with_b).dot(y.T)
+
     # end answer
     return w
