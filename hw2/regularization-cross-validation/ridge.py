@@ -19,8 +19,15 @@ def ridge(X, y, lmbda):
     # begin answer
 
     X_with_b = np.vstack((np.ones((1, N)), X))
+    
+    mat = np.matmul(X_with_b, X_with_b.T) + lmbda * np.eye(P + 1)
+    
+    if lmbda == 0:
+        w = np.linalg.pinv(mat)
+    else:
+        w = np.linalg.inv(mat)
 
-    w = np.linalg.pinv(np.matmul(X_with_b, X_with_b.T) + lmbda * np.eye(P + 1)).dot(X_with_b).dot(y.T)
+    w = w.dot(X_with_b).dot(y.T)
 
     # end answer
     return w

@@ -21,7 +21,7 @@ def logistic_r(X, y, lmbda):
 
     min_loss = 0
     max_iters = 1000
-    learning_rate = 10
+    learning_rate = 0.01
 
     iter = 0
     h = 1 / (1 + np.exp(-w.T.dot(X_with_b)))  # sigmoid
@@ -35,10 +35,11 @@ def logistic_r(X, y, lmbda):
 
         # update
         iter += 1
-        h = 1 / (1 + np.exp(-w.T.dot(X_with_b)))
+        h = 1. / (1 + np.exp(-w.T.dot(X_with_b)))
+        
         loss = - y.dot(np.log(h).T) + (1 - y).dot(np.log(1 - h).T) / N
         loss += lmbda * w.T.dot(w) / 2 / N
 
     # end answer
-    
+
     return w
