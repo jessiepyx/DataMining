@@ -27,9 +27,10 @@ EPSILON = 0.00010
 loss, _, grads = feedforward_backprop(data, label, weights)
 
 # check correctness of fully1_bias's gradient
-for c in range(weights['fully1_bias'].shape[0]):
-    weights['fully1_bias'][c, 0] = weights['fully1_bias'][c, 0] + EPSILON
+for c in range(weights['fully2_bias'].shape[0]):
+    weights['fully2_bias'][c, 0] = weights['fully2_bias'][c, 0] + EPSILON
     loss_2, _, grads_2 = feedforward_backprop(data, label, weights)
-    print('{:.2}, {:.2}, {:.2}'.format((loss_2 - loss) / EPSILON, grads['fully1_bias_grad'][c, 0], grads_2['fully1_bias_grad'][c, 0]))
-    weights['fully1_bias'][c, 0] = weights['fully1_bias'][c, 0] - EPSILON
+    print('{:.2}, {:.2}, {:.2}'.format(
+        (loss_2 - loss) / EPSILON, grads['fully2_bias_grad'][c, 0], grads_2['fully2_bias_grad'][c, 0]))
+    weights['fully2_bias'][c, 0] = weights['fully2_bias'][c, 0] - EPSILON
 

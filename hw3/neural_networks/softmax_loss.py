@@ -1,11 +1,12 @@
 import numpy as np
 
+
 def softmax_loss(in_, label):
     '''
     The softmax loss computing process
       inputs:
           in_     : the output of previous layer, shape: [number of images, number of kinds of labels]
-          label   : the ground true of these images, shape: [1, number of images]
+          label   : the ground truth of these images, shape: [1, number of images]
 
       outputs
           loss    : the average loss, scale variable

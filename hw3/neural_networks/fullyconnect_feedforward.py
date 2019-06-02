@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def fullyconnect_feedforward(in_, weight, bias):
     '''
     The feedward process of fullyconnect
@@ -11,9 +12,11 @@ def fullyconnect_feedforward(in_, weight, bias):
       output parameters:
           out     : the output of this layer, shape: [number of images, number of outputs]
     '''
-    # TODO
 
     # begin answer
+
+    out = np.matmul(in_, weight) + bias.T
+
     # end answer
 
     return out

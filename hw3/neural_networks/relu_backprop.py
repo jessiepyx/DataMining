@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def relu_backprop(in_sensitivity, in_):
     '''
     The backpropagation process of relu
@@ -11,9 +12,12 @@ def relu_backprop(in_sensitivity, in_):
       output paramter:
           out_sensitivity : the sensitivity to the lower layer, shape: same as in_sensitivity
     '''
-    # TODO
 
     # begin answer
-    # end answer
-    return out_sensitivity
 
+    out_sensitivity = np.copy(in_sensitivity)
+    out_sensitivity[in_ < 0] = 0
+
+    # end answer
+
+    return out_sensitivity
