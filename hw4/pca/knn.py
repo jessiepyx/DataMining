@@ -20,6 +20,15 @@ def knn(x, x_train, y_train, k):
     # YOUR CODE HERE
 
     # begin answer
+
+    N_test, P = x.shape
+    y = np.zeros(N_test)
+
+    for i in range(N_test):
+        dist = np.linalg.norm((x[i]) - x_train, axis=1)
+        idx = np.argsort(dist)[:k]
+        y[i] = scipy.stats.mode(y_train[idx])[0]
+
     # end answer
 
     return y
