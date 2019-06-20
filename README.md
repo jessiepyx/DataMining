@@ -29,3 +29,7 @@ I use Jupyter Notebook and Python 3.6.
 - Decision Tree and ID3
 - K-Means Clustering
 
+## hw4
+
+- Spectral Clustering
+- Principal Component Analysis
